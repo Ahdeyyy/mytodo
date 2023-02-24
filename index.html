@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body class="bg-black text-white">
+  <div id="app" class="container mx-auto p-8">
+    <h2 class="font-semibold text-4xl text-center mb-8 uppercase font-mono">
+      My todo list
+    </h2>
+    <section class="p-6 mb-6">
+      <h3 class="  text-2xl text-center mb-7 font-serif">Add a new
+        item</h3>
+      <form class="flex flex-col p-8 space-y-2">
+        <label for="todo-name" class="text-center uppercase">name</label>
+        <input class="border bg-transparent rounded px-3 py-2" type="text" name="todo-name" id="todo-name">
+        <label for="todo-desc" class="text-center uppercase">description</label>
+        <input class="border bg-transparent rounded px-3 py-2" type="text" name="todo-desc" id="todo-desc">
+        <button id="save" type="submit"
+          class="bg-gray-200 text-black font-bold  text-lg px-3 py-2 uppercase rounded-lg hover:bg-gray-300">Save</button>
+      </form>
+    </section>
+    <main class="mb-4">
+      <ul class="grid lg:grid-cols-3 md:grid-cols-3 gap-3">
+
+      </ul>
+
+      <div class="fixed hidden inset-0 bg-gray-600 bg-opacity-90 overflow-y-auto h-full w-full" id="modal-overlay">
+      </div>
+      <dialog class="absolute bg-white top-1/2 w-96 px-2 rounded-lg">
+        <form class="flex flex-col py-4 px-16 space-y-2" id="edit-form">
+
+          <label class="text-center uppercase" for="edit-todo-name">Todo name</label>
+          <input class="border bg-transparent rounded px-3 py-2" type="text" name="edit-todo-name" id="edit-todo-name">
+          <label class="text-center uppercase" for="edit-todo-desc">Todo description</label>
+          <input class="border bg-transparent rounded px-3 py-2" type="text" name="edit-todo-desc" id="edit-todo-desc">
+          <button id="edit" type="submit" class="bg-green-400 p-2 rounded-lg hover:bg-green-500 uppercase">Edit</button>
+          <button id="close-editor" type="button"
+            class="bg-red-400 p-2 rounded-lg hover:bg-red-500 uppercase">Close</button>
+        </form>
+      </dialog>
+    </main>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
